@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+    float totalBill, taxPercent, tipPercent;
+    int numberOfPeople;
+
+    // Input total bill
+    printf("Enter total bill amount: ");
+    scanf("%f", &totalBill);
+
+    // Input tax percentage
+    printf("Enter tax percentage: ");
+    scanf("%f", &taxPercent);
+
+    // Input tip percentage
+    printf("Enter tip percentage: ");
+    scanf("%f", &tipPercent);
+
+    // Input number of people
+    printf("Enter number of people: ");
+    scanf("%d", &numberOfPeople);
+
+    // Calculate tax and tip amounts
+    float taxAmount = (taxPercent / 100) * totalBill;
+    float tipAmount = (tipPercent / 100) * totalBill;
+
+    // Total amount after tax and tip
+    float finalAmount = totalBill + taxAmount + tipAmount;
+
+    // Amount per person
+    float perPerson = finalAmount / numberOfPeople;
+
+    // Output results
+    printf("\n--- Bill Summary ---\n");
+    printf("Original Bill: %.2f\n", totalBill);
+    printf("Tax Amount: %.2f\n", taxAmount);
+    printf("Tip Amount: %.2f\n", tipAmount);
+    printf("Final Amount: %.2f\n", finalAmount);
+    printf("Each Person Pays: %.2f\n", perPerson);
+
+    return 0;
+}
